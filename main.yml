@@ -1,2 +1,13 @@
-// This is my first Terraform code
-// This is a second add
+resource "aws_vpc" "development-vpc" {
+  cidr_block = "192.168.100.0/24"
+  tags = {
+    Name = "dev-vpc"
+  }
+}
+
+resource "aws_vpc" "production-vpc" {
+  cidr_block = "192.168.200.0/24"
+  tags = {
+    Name = "prd-vpc"
+  }
+}
